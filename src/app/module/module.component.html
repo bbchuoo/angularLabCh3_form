@@ -1,0 +1,28 @@
+<h1>Model Driven Form </h1>
+<form [formGroup]="form">
+    <div>
+        <label for="account">帳號：</label>
+        <input type="text" name="account" formControlName="account">
+        <div class="errors">
+            <span *ngIf="form.get('account').hasError('required')">請輸入帳號!</span>
+            <span *ngIf="form.get('account').hasError('minLength')">帳號最少輸入5個 字!</span>
+        </div>
+    </div>
+
+    <div>
+        <label for="password">密碼：</label>
+        <input type="text" name="password" formControlName="password">
+        <div class="errors">
+            <span *ngIf="form.get('password').hasError('required')">請輸入密碼!</span>
+        </div>
+    </div>
+    <div>
+        <pre>{{ form.value | json }}</pre>
+    </div>
+
+    <button type="submit ">送出</button>
+    <button type="button " (click)="reset() ">重置表單</button>
+
+
+
+</form>
