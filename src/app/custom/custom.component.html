@@ -1,0 +1,15 @@
+<h1>
+  自訂表單驗證
+</h1>
+<form [formGroup]="form">
+
+  <div>
+      <label for="cellphoneNumber">手機：</label>
+    <input type="cellphoneNumber" formControlName="cellphoneNumber">
+  </div>
+  <div >
+    <span *ngIf="form.controls.cellphoneNumber.touched && form.controls.cellphoneNumber.dirty && form.controls.cellphoneNumber.invalid">{{form.controls.cellphoneNumber.errors.message}}</span>
+  </div>
+
+  <button type="submit ">送出</button>
+</form>
