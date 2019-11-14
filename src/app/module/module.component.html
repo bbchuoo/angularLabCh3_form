@@ -5,7 +5,10 @@
         <input type="text" formControlName="account">
         <div class="errors">
             <span *ngIf="form.get('account').hasError('minlength')">帳號最少輸入5個字!</span>
+            <!-- <span *ngIf="form.controls.account.invalid && form.controls.account.dirty && form.controls.account.touched ">帳號最少輸入5個字!!!!</span> -->
             <span *ngIf="form.get('account').hasError('required')">請輸入帳號!</span>
+
+            
         </div>
     </div>
 
